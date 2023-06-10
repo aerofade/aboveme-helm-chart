@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aboveme-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aboveme
+  template:
+    metadata:
+      labels:
+        app: aboveme
+    spec:
+      containers:
+        - name: aboveme
+          image: aerofade/aboveme:latest
+          command: ["/usr/bin/env", "python3", "/app/aboveme.py"]
+          volumeMounts:
+          - mountPath: "/app/config"
+            name: aboveme-config
+            readOnly: true
+      volumes:
+        - name:  aboveme-config
+          secret:
+            secretName: aboveme-config

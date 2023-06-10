@@ -1,0 +1,13 @@
+# Default values for my-chart.
+config:
+  queryUrlPart1: "https://data-cloud.flightradar24.com/zones/fcgi/feed.js?faa=1&bounds="
+  queryUrlPart2: "&satellite=1&mlat=1&flarm=1&adsb=1&gnd=1&air=1&vehicles=1&estimated=1&maxage=14400&gliders=1&stats=1"
+  bounds: "-41.189,-41.23,174.746,174.869"
+  extraDataUrl: "https://data-live.flightradar24.com/clickhandler/?flight="
+  userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  brokerAddress: ""
+  brokerPort: 1883
+  brokerUsername: ""
+  brokerPassword: ""
+  mqttTopic: "flight_data"
+  sleep: 30
